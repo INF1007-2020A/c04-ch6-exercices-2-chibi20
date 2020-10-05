@@ -6,14 +6,20 @@ from matplotlib.colors import cnames
 
 def list_to_dict(some_list: list) -> dict:
     # TODO: Transformer la liste en dictionnaire, les éléments de la liste deviennent les clés et leur index deviennent les valeurs
+    dict = {}
+    for i in range(len(some_list)):
+        dict[some_list[i]] = i
 
-    return {}
+    return dict
 
 
 def color_name_to_hex(colors: list) -> list:
+    tuple = ()
     # TODO: Trouver la valeur hex de chaque couleur dans la liste et créer une liste de tupple où le premier élément est le nom de la couleur et le deuxième est la valeur hex
+    for i in colors:
+        tuple[i] = (colors[i], hex(colors[i]))
 
-    return []
+    return tuple
 
 
 def create_list() -> list:
