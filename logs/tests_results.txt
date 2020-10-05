@@ -1,6 +1,6 @@
 test_color_name_to_hex (__main__.TestExercice) ... ERROR
 test_compute_mse (__main__.TestExercice) ... FAIL
-test_create_list (__main__.TestExercice) ... FAIL
+test_create_list (__main__.TestExercice) ... ERROR
 test_list_to_dict (__main__.TestExercice) ... ok
 
 ======================================================================
@@ -11,9 +11,19 @@ Traceback (most recent call last):
     output = [exercice.color_name_to_hex(v) for v in colors]
   File "test_exercice.py", line 34, in <listcomp>
     output = [exercice.color_name_to_hex(v) for v in colors]
-  File "/home/runner/work/c04-ch6-exercices-2-chibi20/c04-ch6-exercices-2-chibi20/exercice.py", line 20, in color_name_to_hex
-    tuple[i] = (colors[i], hex(colors[i]))
+  File "/home/runner/work/c04-ch6-exercices-2-chibi20/c04-ch6-exercices-2-chibi20/exercice.py", line 21, in color_name_to_hex
+    tuple_couleur = (colors[i], hex(colors[i]))
 TypeError: list indices must be integers or slices, not str
+
+======================================================================
+ERROR: test_create_list (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 44, in test_create_list
+    output = exercice.create_list()
+  File "/home/runner/work/c04-ch6-exercices-2-chibi20/c04-ch6-exercices-2-chibi20/exercice.py", line 33, in create_list
+    liste[i] = i
+IndexError: list assignment index out of range
 
 ======================================================================
 FAIL: test_compute_mse (__main__.TestExercice)
@@ -25,21 +35,7 @@ AssertionError: {} != {'LR': 220.6, 'DNN': 14.0, 'RF': 1681.8}
 - {}
 + {'DNN': 14.0, 'LR': 220.6, 'RF': 1681.8} : Erreur dans le calcul des MSE
 
-======================================================================
-FAIL: test_create_list (__main__.TestExercice)
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 51, in test_create_list
-    'Mauvaise reponse'
-AssertionError: Lists differ: [] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[57248 chars]9999]
+Ran 4 tests in 0.001s
 
-Second list contains 9664 additional elements.
-First extra element 0:
-0
-
-Diff is 86292 characters long. Set self.maxDiff to None to see it. : Mauvaise reponse
-
-----------------------------------------------------------------------
-Ran 4 tests in 0.079s
-
-FAILED (failures=2, errors=1)
+FAILED (failures=1, errors=2)
